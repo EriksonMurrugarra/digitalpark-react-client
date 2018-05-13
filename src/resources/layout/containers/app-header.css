@@ -46,6 +46,10 @@
     display: none;
 }
 
+.bar-pod, .logo-pod {
+    margin-right: 10px;
+}
+
 /*responsive*/
 
 @media screen and (max-width: 500px) {

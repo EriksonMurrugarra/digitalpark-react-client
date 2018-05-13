@@ -3,8 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "react": "^16.3.2",
-    "react-dom": "^16.3.2",
+    "react": "16.3.2",
+    "react-dom": "16.3.2",
+    "react-router-dom": "4.2.2",
     "react-scripts": "1.1.4"
   },
   "scripts": {
@@ -12,6 +13,6 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "deploy": "aws s3 cp build s3://digitalpark.io --recursive --acl public-read"
+    "deploy": "npm run build && aws s3 cp build s3://digitalpark.io --recursive --acl public-read"
   }
 }

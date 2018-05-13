@@ -38,3 +38,7 @@ p {
   font-weight: lighter;
   text-align: justify;
 }
+
+button {
+  outline: none;
+}

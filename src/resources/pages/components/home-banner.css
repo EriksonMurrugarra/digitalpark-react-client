@@ -1,6 +1,8 @@
 .btn-join {
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 60px;
+    margin-bottom: 200px;
+    padding: 15px 30px;
+    font-size: 20px;
 }
 
 .app-banner {
@@ -11,15 +13,17 @@
 
 .app-banner-title {
     font-size: 25px;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 50px;
+    margin-right: 50px;
+    text-shadow: 1px 1px 5px rgba(150, 150, 150, 1);
+
 }
 
 .app-banner aside {
     padding-top: 30px;
     color: #eeeeee;
     font-family: 'Exo 2', sans-serif;
-    background-color: rgba(0, 0, 0, .67);
+    background-color: rgba(0, 0, 0, .3);
     text-align: center;
     border-bottom: 1px solid #aaaaaa;
 }
@@ -33,7 +37,7 @@
     }
 
     .app-banner-title {
-        font-size: 22px;
+        font-size: 25px;
         margin: 10px;
     }
 
