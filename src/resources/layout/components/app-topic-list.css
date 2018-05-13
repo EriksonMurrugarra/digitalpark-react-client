@@ -1,0 +1,32 @@
+.app-topic-list {
+    background: #e2e227;
+    text-align: center;
+    height: 40px;
+}
+
+.app-topic-list ul {
+    color: #000000;
+}
+
+.app-topic-list ul li {
+    margin: 10px 20px;
+    font-size: 14px;
+}
+
+/*responsive*/
+
+@media screen and (max-width: 650px) {
+
+    .app-topic-list ul li {
+        margin: 10px 10px;
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    .app-topic-list ul li {
+        margin: 10px 10px;
+        font-size: 14px;
+    }
+}

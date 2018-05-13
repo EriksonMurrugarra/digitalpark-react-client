@@ -1,0 +1,40 @@
+.btn-join {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.app-banner {
+    background-color: #eef9fb;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.app-banner-title {
+    font-size: 25px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.app-banner aside {
+    padding-top: 30px;
+    color: #eeeeee;
+    font-family: 'Exo 2', sans-serif;
+    background-color: rgba(0, 0, 0, .67);
+    text-align: center;
+    border-bottom: 1px solid #aaaaaa;
+}
+
+/*responsive*/
+
+@media screen and (max-width: 500px) {
+
+    .app-banner {
+        background-size: cover;
+    }
+
+    .app-banner-title {
+        font-size: 22px;
+        margin: 10px;
+    }
+
+}
