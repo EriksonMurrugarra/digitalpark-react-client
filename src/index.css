@@ -41,4 +41,5 @@ p {
 
 button {
   outline: none;
+  cursor: pointer;
 }

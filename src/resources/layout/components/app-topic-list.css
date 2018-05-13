@@ -1,7 +1,8 @@
 .app-topic-list {
-    background: #e2e227;
+    background: #d5d5d5;
     text-align: center;
     height: 40px;
+    border-bottom: 1px solid #ccc;
 }
 
 .app-topic-list ul {

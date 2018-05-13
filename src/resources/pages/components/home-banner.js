@@ -6,12 +6,15 @@ const bannerStyle = {
   backgroundImage: `url(${BannerGif})`
 };
 
-const HomeBanner = () => (
+const HomeBanner = ({ authenticated }) => (
   <section className="app-banner" style={bannerStyle}>
     <aside>
       <div>
         <h1 className="app-banner-title">Experiencias vividas sobre Desarrollo de Aplicaciones, Cloud Computing y DevOps.</h1>
-        <button className="btn-green btn-join">Unete Ahora!</button>
+        {
+          !authenticated &&
+          <button className="btn-green btn-join">Unete Ahora!</button>
+        }
       </div>
     </aside>
   </section>

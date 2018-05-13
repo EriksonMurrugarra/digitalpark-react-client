@@ -1,10 +1,11 @@
 .btn-green {
-    background: #97ca5e;
     border: none;
-    border-bottom: 3px solid #4a731c;
+    background: #218282;
+    border-bottom: 3px solid #165a5a;
     color: #FFFFFF;
     font-size: 13px;
     padding: 6px 20px;
     font-weight: 700;
     border-radius: 10px;
+
 }

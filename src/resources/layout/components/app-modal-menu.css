@@ -19,9 +19,9 @@
 
 .app-modal-menu ul li {
     display: block;
-    font-size: 28px;
+    font-size: 25px;
     width: 100%;
-    border-bottom: 1px solid #cac139;
+    border-bottom: 1px solid #ccc;
     padding: 10px 0px;
     color: #777777;
 }

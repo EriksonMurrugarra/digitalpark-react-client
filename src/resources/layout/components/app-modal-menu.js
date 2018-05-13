@@ -12,9 +12,9 @@ const AppModalMenu = () => {
   return createPortal(
     <div className="app-modal-menu" id="app-modal-menu" onClick={() => closeModalMenu()}>
       <ul>
-        <li><NavLink exact to="/" activeClassName="app-modal-menu-li-active"><i className="fas fa-code"></i>&nbsp;&nbsp; Inicio</NavLink></li>
-        <li><NavLink to="/blog" activeClassName="app-modal-menu-li-active"><i className="fas fa-newspaper"></i>&nbsp;&nbsp;Blog</NavLink></li>
-        <li><NavLink to="/info" activeClassName="app-modal-menu-li-active"><i className="fas fa-info"></i>&nbsp;&nbsp; Info</NavLink></li>
+        <li><NavLink exact to="/" activeClassName="app-modal-menu-li-active"><i className="fas fa-code"></i> <br/><br/> Inicio</NavLink></li>
+        <li><NavLink to="/blog" activeClassName="app-modal-menu-li-active">Blog</NavLink></li>
+        <li><NavLink to="/info" activeClassName="app-modal-menu-li-active">Info</NavLink></li>
       </ul>
     </div>,
     document.getElementById("modal-menu"))

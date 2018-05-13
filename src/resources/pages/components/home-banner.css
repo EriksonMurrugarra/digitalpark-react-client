@@ -1,6 +1,5 @@
 .btn-join {
     margin-top: 60px;
-    margin-bottom: 200px;
     padding: 15px 30px;
     font-size: 20px;
 }
@@ -23,9 +22,10 @@
     padding-top: 30px;
     color: #eeeeee;
     font-family: 'Exo 2', sans-serif;
-    background-color: rgba(0, 0, 0, .3);
+    background-color: rgba(0, 0, 0, .5);
     text-align: center;
     border-bottom: 1px solid #aaaaaa;
+    padding-bottom: 250px;
 }
 
 /*responsive*/
