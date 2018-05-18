@@ -7,7 +7,8 @@ import AppFooter from './resources/layout/components/app-footer';
 import AppModalMenu from './resources/layout/components/app-modal-menu';
 // pages
 import BlogPage from './resources/pages/containers/blog-page';
-import HomePage from "./resources/pages/containers/home-page";
+import HomePage from './resources/pages/containers/home-page';
+import ReadPage from './resources/pages/containers/read-page';
 // router
 import { HashRouter as Router, Switch, Route } from 'react-router-dom';
 // auth0
@@ -28,6 +29,7 @@ class App extends Component {
       'dW5hdeN1LAguH4CkZQe6u4AX2F3deKNw',
       'digitalpark.auth0.com',
       {
+        auth: { redirect: true},
         language: 'es',
         languageDictionary: {
           title: ''
@@ -52,6 +54,7 @@ class App extends Component {
               <Switch>
                 <Route exact path="/" component={HomePage} />
                 <Route exact path="/blog" component={BlogPage} />
+                <Route exact path="/blog/:key" component={ReadPage} />
               </Switch>
               <AppFooter></AppFooter>
               <AppModalMenu></AppModalMenu>

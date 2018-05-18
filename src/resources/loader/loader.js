@@ -5,7 +5,7 @@ const Loader = ({ text }) => {
   const loaderText = text || 'Loading ...';
 
   return (
-    <div> <img src={LoadingGIF} alt="loading" />{ loaderText }</div>
+    <div style={{width: 200, margin: '10px auto' }}> <img src={LoadingGIF} alt="loading" />{ loaderText }</div>
   );
 }
 

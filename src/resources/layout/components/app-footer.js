@@ -3,7 +3,7 @@ import './app-footer.css';
 
 const AppFooter = () => (
   <footer className="app-footer">
-    <span><i className="fas fa-code"></i> por <b>Erikson Murrugarra</b></span>
+    <span><i className="fas fa-code"></i> por <b>The DigitalPark Team</b></span>
   </footer>
 );
 

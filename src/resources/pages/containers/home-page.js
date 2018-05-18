@@ -7,7 +7,7 @@ import { connect } from 'react-redux';
 class HomePage extends Component {
   render () {
     return (
-      <HomeBanner authenticated={this.props.auth.authenticated}/>
+      <HomeBanner/>
     );
   }
 }

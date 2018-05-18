@@ -19,6 +19,7 @@ class AppHeader extends Component {
   }
 
   logout = () => {
+    this.props.lock.logout();
     this.props.updateAuthState({ authenticated: false });
     localStorage.removeItem('dp-auth');
   }

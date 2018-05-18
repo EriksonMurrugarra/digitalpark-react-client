@@ -1,0 +1,36 @@
+.blog-reader {
+    max-width: 750px;
+    margin: 0 auto;
+    background: #FFFFFF;
+    border-bottom: 2px solid #dddddd;
+}
+
+.blog-reader>div {
+    margin: 10px 30px;
+    padding-top: 30px;
+}
+
+.blog-reader-title {
+    font-size: 24px;
+}
+
+.blog-reader-topics {
+    font-size: 14px;
+    color: #cccccc;
+}
+
+.blog-reader-topics li {
+    margin: 10px 10px;
+    margin-left: 0;
+}
+
+.blog-reader-date {
+    font-size: 12px;
+    text-align: right;
+    color: #777777;
+    margin-bottom: 10px;
+}
+
+.blog-reader-content {
+    color: #111111 !important;
+}
