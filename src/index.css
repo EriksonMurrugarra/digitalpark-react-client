@@ -42,3 +42,8 @@ button {
   outline: none;
   cursor: pointer;
 }
+
+input[type=text], textarea {
+  outline: none;
+  border: 1px solid #DDDDDD;
+}

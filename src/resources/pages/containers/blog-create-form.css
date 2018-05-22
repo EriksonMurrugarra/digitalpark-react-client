@@ -1,0 +1,27 @@
+.blog-create-form label {
+    display: block;
+    width: 100%;
+    font-size: 12px;
+    margin: 10px 0;
+    text-transform: uppercase;
+    color: #165a5a;
+}
+
+.blog-create-form input[type=text] {
+}
+
+.blog-create-form textarea {
+}
+
+.blog-create-form input[type=text], .blog-create-form textarea {
+    padding: 10px 0;
+    padding-left: 10px;
+    width: calc(100vw - 50px);
+    border-radius: 10px;
+    font-size: 15px;
+}
+
+.create-blog-page-toolbar {
+    text-align: right;
+    margin-top: 10px;
+}

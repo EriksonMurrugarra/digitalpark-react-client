@@ -90,7 +90,7 @@ class AppHeader extends Component {
             </div>
           }
 
-          { authenticated && <img className="user-avatar" src={UserAvatar} alt="User Avatar"/> }
+          { authenticated && <NavLink to="/perfil"><img className="user-avatar" src={UserAvatar} alt="User Avatar"/></NavLink> }
           { authenticated && <button className="btn-logout" onClick={this.logout}><i className="fas fa-sign-out-alt"></i></button> }
         </div>
       </header>

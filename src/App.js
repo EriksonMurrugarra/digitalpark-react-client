@@ -9,6 +9,9 @@ import AppModalMenu from './resources/layout/components/app-modal-menu';
 import BlogPage from './resources/pages/containers/blog-page';
 import HomePage from './resources/pages/containers/home-page';
 import ReadPage from './resources/pages/containers/read-page';
+import ProfilePage from "./resources/pages/containers/profile-page";
+import CreateBlogPage from "./resources/pages/containers/create-blog-page";
+
 // router
 import { HashRouter as Router, Switch, Route } from 'react-router-dom';
 // auth0
@@ -55,6 +58,8 @@ class App extends Component {
                 <Route exact path="/" component={HomePage} />
                 <Route exact path="/blog" component={BlogPage} />
                 <Route exact path="/blog/:key" component={ReadPage} />
+                <Route exact path="/perfil" component={ProfilePage} />
+                <Route exact path="/crear-entrada" component={CreateBlogPage} />
               </Switch>
               <AppFooter></AppFooter>
               <AppModalMenu></AppModalMenu>

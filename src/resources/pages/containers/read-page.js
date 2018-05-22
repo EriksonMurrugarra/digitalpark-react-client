@@ -26,7 +26,7 @@ class ReadPage extends Component {
     const { post } = this.state;
 
     return (
-      <div>
+      <section>
         {
           !post &&
             <Loader/>
@@ -35,7 +35,7 @@ class ReadPage extends Component {
           post &&
             <BlogReader post={post}/>
         }
-      </div>
+      </section>
     );
   }
 
