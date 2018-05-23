@@ -12,6 +12,7 @@
 
 .blog-reader-title {
     font-size: 28px;
+    color: #165a5a;
 }
 
 .blog-reader-topics {
@@ -33,4 +34,29 @@
 
 .blog-reader-content {
     color: #111111 !important;
+}
+
+.blog-reader-content ul li {
+    display: block;
+    font-size: 17px;
+    font-weight: lighter;
+}
+
+.blog-reader-content h2 {
+    border-bottom: 1px solid #EEE;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    font-size: 22px;
+    margin-top: 27px;
+    color: #165a5a;
+}
+
+.blog-reader-content h3 {
+    border-bottom: 1px solid #EEE;
+    padding-bottom: 10px;
+}
+
+
+.blog-reader-content pre {
+    background: #FAFAFA;
 }
