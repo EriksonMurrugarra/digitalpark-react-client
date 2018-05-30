@@ -60,3 +60,7 @@
 .blog-reader-content pre {
     background: #FAFAFA;
 }
+
+.blog-toolbar {
+    text-align: right;
+}

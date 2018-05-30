@@ -43,7 +43,7 @@ button {
   cursor: pointer;
 }
 
-input[type=text], textarea {
+input[type=text], input[type=password], textarea {
   outline: none;
   border: 1px solid #DDDDDD;
 }

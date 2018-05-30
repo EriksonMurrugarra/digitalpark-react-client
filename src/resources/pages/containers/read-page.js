@@ -5,7 +5,7 @@ import axios from 'axios';
 import Loader from '../../loader/loader';
 // components
 import BlogReader from '../components/blog-reader';
-
+import { connect } from 'react-redux';
 
 class ReadPage extends Component {
 
@@ -24,6 +24,12 @@ class ReadPage extends Component {
 
   render () {
     const { post } = this.state;
+    let isAuthor = false;
+
+    if (post) {
+      const me = this.props.auth;
+      isAuthor = me && (post.author === me.email);
+    }
 
     return (
       <section>
@@ -33,7 +39,7 @@ class ReadPage extends Component {
         }
         {
           post &&
-            <BlogReader post={post}/>
+            <BlogReader post={post} isAuthor={isAuthor}/>
         }
       </section>
     );
@@ -41,4 +47,10 @@ class ReadPage extends Component {
 
 }
 
-export default ReadPage;
+const mapStateToProps = state => {
+  return {
+    auth: state.auth
+  }
+}
+
+export default connect(mapStateToProps)(ReadPage);

@@ -3,16 +3,23 @@ import './blog-reader.css';
 // libraries
 import moment from 'moment';
 import Markdown from 'react-remarkable';
+import { Link } from 'react-router-dom';
 
-const BlogReader = ({ post }) => {
+const BlogReader = ({ post, isAuthor }) => {
   return (
     <div className="blog-reader">
       <div>
+        {
+          isAuthor && <div className="blog-toolbar">
+            <button><i className="fas fa-pencil-alt"></i> Editar</button>
+          </div>
+        }
         <h1 className="blog-reader-title">{ post.title }</h1>
         <ul className="blog-reader-topics">
           {
             post.topics.map(topic => (
-              <li key={topic}>{ topic }</li>
+              <li key={topic}> <Link to={`/topic/${topic}`} replace={true}>{ topic }</Link> </li>
+
             ))
           }
         </ul>

@@ -1,0 +1,40 @@
+.login-section {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.login-form label {
+    display: block;
+    width: 100%;
+    font-size: 12px;
+    margin: 10px 0;
+    text-transform: uppercase;
+    color: #165a5a;
+}
+
+
+.login-form input[type=text], .login-form input[type=password]{
+    padding: 10px 0;
+    width: 100%;
+    border-radius: 10px;
+    font-size: 15px;
+    padding-left: 15px;
+}
+
+.create-login-toolbar {
+    text-align: right;
+    margin-top: 10px;
+}
+
+.register-link {
+    font-size: 13px;
+    margin-right: 20px;
+    color: #218282;
+}
+
+@media screen and (min-width: 700px) {
+    .login-section {
+        width: 350px;
+    }
+}

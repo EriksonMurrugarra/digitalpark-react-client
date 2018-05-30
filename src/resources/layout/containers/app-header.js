@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import './app-header.css';
 // route
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 // temporal
 import UserAvatar from './images/user-avatar.png';
-// redux
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import { updateAuthState } from '../../../redux/actions';
 
 class AppHeader extends Component {
@@ -14,50 +14,15 @@ class AppHeader extends Component {
     menuReference: null
   };
 
-  login = () => {
-    this.props.lock.show();
-  }
-
   logout = () => {
-    this.props.lock.logout();
-    this.props.updateAuthState({ authenticated: false });
-    localStorage.removeItem('dp-auth');
+    this.props.updateAuthState(null);
+    localStorage.removeItem("auth");
+    this.props.history.push("/");
   }
 
   componentDidMount() {
     this.setState({
       menuReference: document.getElementById("app-modal-menu")
-    });
-
-    // check localstorage for session
-    if (localStorage.getItem('dp-auth')) {
-      const authData = JSON.parse(localStorage.getItem('dp-auth'));
-      authData.authenticated = new Date().getTime() < authData.expiresAt;
-      this.props.updateAuthState(authData);
-
-      if(!authData.authenticated) {
-        localStorage.removeItem('dp-auth');
-      }
-    }
-
-    // configure lock
-    const { lock } = this.props;
-    lock.on('authenticated', (authResult) => {
-      if (authResult) {
-        lock.getUserInfo(authResult.accessToken, (error, profile) => {
-          const userData = {
-            accessToken: `${authResult.tokenType} ${authResult.accessToken}`,
-            profile: profile,
-            expiresAt: JSON.stringify((authResult.expiresIn * 1000) + new Date().getTime()),
-            authenticated: true
-          };
-
-          this.props.updateAuthState(userData);
-
-          // save in localstorage
-          localStorage.setItem("dp-auth", JSON.stringify(userData));
-        })
-      }
     });
   }
 
@@ -66,7 +31,7 @@ class AppHeader extends Component {
   }
 
   render () {
-    const { authenticated } = this.props.auth;
+    const authenticated = this.props.auth;
 
     return (
       <header className="app-header">
@@ -84,9 +49,11 @@ class AppHeader extends Component {
           </ul>
           {
             !authenticated && <div className="menu-buttons">
-              <button className="btn-green btn-login" onClick={this.login}>
-                Ingresar
-              </button>
+              <Link to="/login">
+                <button className="btn-green btn-login">
+                  Ingresar
+                </button>
+              </Link>
             </div>
           }
 
@@ -99,11 +66,10 @@ class AppHeader extends Component {
 
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
     auth: state.auth
   };
-}
+};
 
-
-export default connect(mapStateToProps, {updateAuthState})(AppHeader);
+export default withRouter(connect(mapStateToProps, { updateAuthState })(AppHeader));

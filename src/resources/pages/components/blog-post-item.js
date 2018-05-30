@@ -15,7 +15,7 @@ const BlogPostList = ({ blog }) => (
       <ul className="blog-post-item-topics">
         {
           blog.topics.map(topic => (
-            <li key={topic}>{ topic }</li>
+            <li key={topic}> <Link to={`/topic/${topic}`} replace={true}>{ topic }</Link> </li>
           ))
         }
       </ul>
