@@ -4,6 +4,7 @@ import './profile-page.css';
 import axios from 'axios';
 import { connect } from 'react-redux';
 import Loader from '../../loader/loader';
+import Avatar from './images/user-avatar.png';
 
 class ProfilePage extends Component {
 
@@ -45,6 +46,7 @@ class ProfilePage extends Component {
         {
           userInfo &&
             <div>
+              <img src={Avatar} />
               <h1>{ userInfo.fullName }</h1>
               {
                 isWriter &&

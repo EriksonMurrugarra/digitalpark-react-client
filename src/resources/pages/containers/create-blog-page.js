@@ -15,8 +15,8 @@ class CreateBlogPage extends Component {
         Authorization: `Bearer ${token}`
       }
     })
-    .then(post => {
-      this.props.history.push('/blog');
+    .then(results => {
+      this.props.history.push(`/blog/${ results.data.key }`);
     })
     .catch(error => alert(error));
   }
@@ -24,7 +24,7 @@ class CreateBlogPage extends Component {
   render () {
     return (
       <section className="create-blog-page">
-        <BlogCreateForm submit={this.createBlog}/>
+        <BlogCreateForm submit={this.createBlog} buttonTitle="Publicar"/>
       </section>
     );
   }

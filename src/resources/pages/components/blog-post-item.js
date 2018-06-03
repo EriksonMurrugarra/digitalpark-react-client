@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 const BlogPostList = ({ blog }) => (
   <article className="blog-post-item">
     <div>
-      <span className="blog-post-item-date">{ moment(blog.createdAt).fromNow() }</span>
+      <span className="blog-post-item-date">{ moment(blog.updatedAt).fromNow() }</span>
       <h2 className="blog-post-item-title"><Link to={`/blog/${ blog.key }`}>{ blog.title }</Link></h2>
       <p className="blog-post-item-description">{ blog.description }</p>
       <ul className="blog-post-item-topics">

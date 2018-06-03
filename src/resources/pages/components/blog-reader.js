@@ -11,7 +11,9 @@ const BlogReader = ({ post, isAuthor }) => {
       <div>
         {
           isAuthor && <div className="blog-toolbar">
-            <button><i className="fas fa-pencil-alt"></i> Editar</button>
+            <Link to={`/editar-entrada/${post.key}`}>
+              <button><i className="fas fa-pencil-alt"></i> Editar</button>
+            </Link>
           </div>
         }
         <h1 className="blog-reader-title">{ post.title }</h1>
@@ -23,7 +25,7 @@ const BlogReader = ({ post, isAuthor }) => {
             ))
           }
         </ul>
-        <div className="blog-reader-date"> { moment(post.createdAt).fromNow() }</div>
+        <div className="blog-reader-date"> { moment(post.updatedAt).fromNow() }</div>
         <div className="blog-reader-content">
           <Markdown source={post.content}/>
         </div>

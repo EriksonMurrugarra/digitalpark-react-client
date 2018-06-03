@@ -25,6 +25,20 @@ class BlogCreateForm extends Component {
     event.preventDefault();
   }
 
+  componentDidMount () {
+    const { post } = this.props;
+
+    if (post) {
+      this.setState({
+        key: post.key,
+        title: post.title,
+        description: post.description,
+        topics: post.topics,
+        content: post.content
+      });
+    }
+  }
+
   handleKey = (event) => {
     this.setState({
       key: event.target.value
@@ -78,7 +92,7 @@ class BlogCreateForm extends Component {
         </label>
         <textarea rows={10} value={content} onChange={this.handleContent}></textarea>
         <div className="create-blog-page-toolbar">
-          <button className="btn-green">Publicar</button>
+          <button className="btn-green">{ this.props.buttonTitle }</button>
         </div>
       </form>
     );

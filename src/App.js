@@ -21,6 +21,7 @@ import { createStore, applyMiddleware } from 'redux';
 import ReduxPromise from 'redux-promise';
 import reducers from './redux/reducers';
 import TopicsPage from "./resources/pages/containers/topics-page";
+import EditBlogPage from "./resources/pages/containers/edit-blog-page";
 
 
 class App extends Component {
@@ -42,6 +43,7 @@ class App extends Component {
                 <Route exact path="/topic/:key" component={TopicsPage} />
                 <Route exact path="/perfil" component={ProfilePage} />
                 <Route exact path="/crear-entrada" component={CreateBlogPage} />
+                <Route exact path="/editar-entrada/:key" component={EditBlogPage} />
                 <Route exact path="/login" component={AuthLoginPage} />
                 <Route exact path="/registro" component={AuthRegisterPage} />
               </Switch>
