@@ -18,6 +18,7 @@
 .blog-reader-topics {
     font-size: 14px;
     color: #cccccc;
+    text-transform: capitalize;
 }
 
 .blog-reader-topics li {
