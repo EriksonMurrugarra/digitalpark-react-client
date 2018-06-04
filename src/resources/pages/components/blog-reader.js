@@ -14,8 +14,10 @@ const BlogReader = ({ post, isAuthor }) => {
             <Link to={`/editar-entrada/${post.key}`}>
               <button><i className="fas fa-pencil-alt"></i> Editar</button>
             </Link>
+
           </div>
         }
+        <div className="blog-reader-date"> { moment(post.updatedAt).fromNow() }</div>
         <h1 className="blog-reader-title">{ post.title }</h1>
         <ul className="blog-reader-topics">
           {
@@ -25,7 +27,7 @@ const BlogReader = ({ post, isAuthor }) => {
             ))
           }
         </ul>
-        <div className="blog-reader-date"> { moment(post.updatedAt).fromNow() }</div>
+
         <div className="blog-reader-content">
           <Markdown source={post.content}/>
         </div>

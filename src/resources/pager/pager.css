@@ -1,0 +1,25 @@
+.pager {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.pager li {
+    padding: 5px 10px;
+    border: 1px solid #EEE;
+    margin-right: 10px;
+    border-radius: 10px;
+    font-size: 12px;
+    color: #AAAAAA;
+    cursor: pointer;
+}
+
+.pager li:hover {
+    background: #EEEEEE;
+}
+
+.pager li.active {
+    background: white;
+    color: #165a5a;
+    border-color: #165a5a;
+    font-weight: bold;
+}

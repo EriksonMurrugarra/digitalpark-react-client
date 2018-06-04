@@ -3,18 +3,31 @@ import React, { Component } from 'react';
 import BlogPostList from '../components/blog-post-list';
 // rest
 import axios from 'axios';
+import Pager from '../../pager/Pager';
 
 class BlogPage extends Component {
 
   state = {
-    blogEntries: null
+    blogEntries: null,
+    stats: null,
+    page: 1
   }
 
   componentDidMount () {
-    axios.get(`${process.env.REACT_APP_BLOG_API_URL}`)
-      .then(posts => {
+    this.retrievePosts(1);
+  }
+
+  retrievePosts = page => {
+    this.setState({
+      blogEntries: null,
+      page
+    });
+
+    axios.get(`${process.env.REACT_APP_BLOG_API_URL}/?page=${page}`)
+      .then(results => {
         this.setState({
-          blogEntries: posts.data
+          blogEntries: results.data.posts,
+          stats: results.data.stats
         });
       })
       .catch(error => {
@@ -23,11 +36,13 @@ class BlogPage extends Component {
   }
 
   render () {
-    const { blogEntries } = this.state;
+    const { blogEntries, stats } = this.state;
 
     return (
       <section className="blog-page">
+        { stats && <Pager current={stats.page} pages={stats.pages} onPageSelected={this.retrievePosts} /> }
         <BlogPostList blogEntries={blogEntries}/>
+        { stats && <Pager current={stats.page} pages={stats.pages} onPageSelected={this.retrievePosts} /> }
       </section>
     );
   }

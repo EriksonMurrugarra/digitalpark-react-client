@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './app-topic-list.css';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import axios from 'axios';
 
 class AppTopicList extends Component {
@@ -27,7 +27,7 @@ class AppTopicList extends Component {
         <ul>
           {
             this.state.topics.map(topic => (
-              <li key={topic.topic}> <Link to={`/topic/${topic.topic}`} replace={true}>{ topic.topic }</Link> </li>
+              <li key={topic.topic}> <NavLink to={`/topic/${topic.topic}`} replace={true} activeClassName="active" >{ topic.topic }</NavLink> </li>
             ))
           }
         </ul>

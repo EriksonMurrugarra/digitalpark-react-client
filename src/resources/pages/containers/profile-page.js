@@ -46,7 +46,7 @@ class ProfilePage extends Component {
         {
           userInfo &&
             <div>
-              <img src={Avatar} />
+              <img className="profile-page-avatar" src={Avatar} alt="user avatar"/>
               <h1>{ userInfo.fullName }</h1>
               {
                 isWriter &&

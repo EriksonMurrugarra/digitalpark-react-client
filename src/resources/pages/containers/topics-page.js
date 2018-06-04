@@ -1,37 +1,46 @@
 import React, { Component } from 'react';
 import BlogPostList from "../components/blog-post-list";
 import axios from 'axios';
+import Pager from '../../pager/Pager';
 import './topics-page.css';
 
 class TopicsPage extends Component {
 
   state = {
     blogEntries: null,
-    topic: '...'
+    topic: '...',
+    stats: null,
+    page: 1
   };
 
   componentDidMount () {
     const topic = this.props.match.params.key;
 
-    this.retrieveBlogEntries(topic);
+    this.retrieveBlogEntries(1, topic);
   }
 
   componentWillReceiveProps (nextProps) {
     const topic =  nextProps.match.params.key;
 
-    this.retrieveBlogEntries(topic);
+    this.retrieveBlogEntries(1, topic);
   }
 
-  retrieveBlogEntries = (topic) => {
+  retrieveBlogEntries = (page, topic) => {
     this.setState({
       topic,
       blogEntries: null
     });
 
-    axios.get(`${process.env.REACT_APP_BLOG_API_URL}?topic=${topic}`)
-      .then(posts => {
+    this.retrievePosts(page, topic)
+
+  }
+
+  retrievePosts = (page, topic) => {
+    axios.get(`${process.env.REACT_APP_BLOG_API_URL}?topic=${topic}&page=${page}`)
+      .then(results => {
         this.setState({
-          blogEntries: posts.data
+          blogEntries: results.data.posts,
+          stats: results.data.stats
         });
       })
       .catch(error => {
@@ -40,12 +49,21 @@ class TopicsPage extends Component {
   }
 
 
+
+  onPageSelected = page => {
+    this.setState({
+      blogEntries: null
+    });
+    this.retrievePosts(page, this.state.topic);
+  }
+
   render () {
-    const { topic, blogEntries } = this.state;
+    const { blogEntries, stats } = this.state;
     return (
       <div>
-        <aside className="topicTitle">{topic}</aside>
+        { stats && <Pager current={stats.page} pages={stats.pages} onPageSelected={this.onPageSelected} /> }
         <BlogPostList blogEntries={blogEntries}/>
+        { stats && <Pager current={stats.page} pages={stats.pages} onPageSelected={this.onPageSelected} /> }
       </div>
     )
   }
