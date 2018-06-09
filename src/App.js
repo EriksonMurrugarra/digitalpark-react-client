@@ -37,7 +37,7 @@ class App extends Component {
               <AppHeader/>
               <AppTopicList/>
               <Switch>
-                <Route exact path="/" component={HomePage} />
+                <Route exact path="/" component={BlogPage} />
                 <Route exact path="/blog" component={BlogPage} />
                 <Route exact path="/blog/:key" component={ReadPage} />
                 <Route exact path="/topic/:key" component={TopicsPage} />
